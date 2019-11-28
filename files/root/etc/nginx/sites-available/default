@@ -1,0 +1,16 @@
+server {
+	listen 80;
+
+	root /var/www;
+	index index.php index.html index.htm;
+
+	server_name _;
+
+        access_log   /var/log/nginx/ssl_access.log;
+        error_log    /var/log/nginx/ssl_error.log;
+
+        include global/security.conf;
+        include global/php.conf;
+        include global/wordpress.conf;
+
+}
